@@ -1,21 +1,41 @@
 h2 {
-    color: #5FCFFC;
-    background-color: rgb(89, 151, 0);
+  color: #5fcffc;
+  background-color: rgb(89, 151, 0);
 }
 
 button {
-    color: magenta;
-    background-color: cyan;
+  color: magenta;
+  background-color: cyan;
 }
 
 p {
-    color: olive;
-    background: rgb(228, 161, 37);
+  color: olive;
+  background: rgb(228, 161, 37);
+  font: monospace;
+  text-align: center;
+  font-weight: 100;
+  letter-spacing: -1px;
+  font-family: monospace;
+}
+li {
+  color: blue;
+}
+.done {
+  color: grey;
+}
+#clear {
+  background-color: red;
+  color: white;
 }
 
 body {
-    background-color: #c5e;
+  background-color: #c5e;
 }
-
-
-
+header a {
+  font-size: 30px;
+  color: teal;
+}
+#dislikes {
+  font-weight: bold;
+  color: red;
+}
