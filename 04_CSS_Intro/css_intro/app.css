@@ -39,3 +39,11 @@ header a {
   font-weight: bold;
   color: red;
 }
+#board :nth-of-type(2n){
+    background-color: red;
+
+}
+#board :nth-of-type(n){
+    background-color: red;
+
+}
