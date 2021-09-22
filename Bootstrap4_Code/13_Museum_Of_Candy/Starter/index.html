@@ -50,25 +50,94 @@
       <div class="collapse navbar-collapse" id="navlinks">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#section1"
+              >Home</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#section2">Cute cat</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cat</a>
+            <a class="nav-link" href="#section3">Country of Cat</a>
           </li>
         </ul>
       </div>
     </nav>
-    <section class="container-fluid px-0">
+
+    <!-- ///////section 1 //// -->
+    <section id="section1" class="container-fluid px-0">
       <div class="row align-items-center">
-        <div class="col-6">
-          <h2 class="text-center">Cat lovers</h2>
+        <div class="col-lg-6">
+          <div id="textHeading" class="text-center d-none d-lg-block">
+            <h2>Cat lovers</h2>
+            <h2>Cat lovers</h2>
+            <h2>Cat lovers</h2>
+          </div>
         </div>
-        <div class="col-6">
+        <div class="col-lg-6">
           <img
             src="./imgs/cedric-vt-IuJc2qh2TcA-unsplash.jpg"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- /////////section 2 -->
+
+    <section id="section2" class="container-fluid px-0 mt-5">
+      <div class="row align-items-center">
+        <div class="col-md-6 order-2 order-md-1">
+          <img
+            src="./imgs/max-baskakov-OzAeZPNsLXk-unsplash.jpg"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="col-md-6 text-center order-1 order-md-2">
+          <div class="row justify-content-center">
+            <div class="col-10">
+              <h2>Cats are cute</h2>
+              <img src="./imgs/icons8-dog-paw-print-64.png" alt="" />
+              <p id="section2-text" class="lead">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Tenetur, perspiciatis! Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Nemo adipisci quas inventore, suscipit magnam
+                officiis nostrum corrupti, tempore accusantium sunt dolorum?
+                Consectetur sit laboriosam numquam fugit sequi dolorum unde
+                illum nobis natus quaerat, aspernatur dolores id facere eum
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- /////////section 3 -->
+
+    <section id="section3" class="container-fluid px-0 mt-5">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center">
+          <div class="row justify-content-center">
+            <div class="col-10">
+              <h2>country of cats</h2>
+              <img src="./imgs/icons8-cat-footprint-64.png" alt="" />
+              <p id="section3-text" class="lead">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Tenetur, perspiciatis! Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Nemo adipisci quas inventore, suscipit magnam
+                officiis nostrum corrupti, tempore accusantium sunt dolorum?
+                Consectetur sit laboriosam numquam fugit sequi dolorum unde
+                illum nobis natus quaerat, aspernatur dolores id facere eum
+                consequuntur deserunt nam obcaecati eligendi explicabo culpa.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="./imgs/kanashi-BLW_KQ0Rkn0-unsplash.jpg"
             class="img-fluid"
             alt=""
           />
@@ -93,5 +162,14 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      $(function () {
+        $(document).scroll(function () {
+          var $nav = $("#mainNavbar");
+          $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+        });
+      });
+    </script>
   </body>
 </html>

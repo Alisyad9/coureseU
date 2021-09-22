@@ -2,12 +2,16 @@ body {
   background: #3772ff;
   font-family: "Sofia", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 #mainNavbar .navbar-brand {
   color: #e2ef70;
   font-size: 2rem;
   font-weight: 400;
 }
+
 #mainNavbar .nav-link {
   font-family: sans-serif;
   color: whitesmoke;
@@ -15,6 +19,42 @@ body {
 #mainNavbar .nav-link:hover {
   color: crimson;
 }
-.bg-light {
+#mainNavbar button {
+  border: 1px solid rgb(238, 255, 0);
+}
+/* .bg-light {
   color: crimson;
+} */
+#textHeading h2 {
+  color: rgb(238, 255, 0);
+}
+h2 {
+  color: rgb(0, 255, 221);
+  /* text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #0fa,
+  0 0 82px #0fa,
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa; */
+  text-shadow:
+    /* White glow */ 0 0 7px black, 0 0 10px #fff, 0 0 21px #fff;
+}
+
+/* @media (max-width: 1200px) {
+  body {
+    background-color: bisque;
+  }
+} */
+#section2-text {
+  font-family: sans-serif;
+}
+#section3-text {
+  font-family: sans-serif;
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.246);
 }
