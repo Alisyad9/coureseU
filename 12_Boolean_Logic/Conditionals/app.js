@@ -67,3 +67,18 @@ if (password.length >= 6) {
 } else {
   console.log("PASSWORD TOO SHORT! Must be 6+ characters");
 }
+
+function getColor(phrase) {
+  //WRITE YOUR CODE BETWEEN THIS LINE: ↓ ↓ ↓ ↓
+  return phrase === "stop"
+    ? "red"
+    : phrase === "slow"
+    ? "yellow"
+    : phrase === "go"
+    ? "green"
+    : "purple";
+
+  //AND THIS LINE ↑↑↑↑↑
+}
+
+console.log(getColor("stop"));
