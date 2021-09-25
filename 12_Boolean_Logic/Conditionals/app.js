@@ -54,31 +54,44 @@ if (age < 5) {
 // NESTING CONDITIONALS
 // =====================
 
-const password = prompt("please enter a new password");
+// const password = prompt("please enter a new password");
 
-// Password must be 6+ characters
-if (password.length >= 6) {
-  // Password cannot include space
-  if (password.indexOf(" ") === -1) {
-    console.log("Valid Password!");
-  } else {
-    console.log("Password cannot contain spaces!");
-  }
-} else {
-  console.log("PASSWORD TOO SHORT! Must be 6+ characters");
-}
+// // Password must be 6+ characters
+// if (password.length >= 6) {
+//   // Password cannot include space
+//   if (password.indexOf(" ") === -1) {
+//     console.log("Valid Password!");
+//   } else {
+//     console.log("Password cannot contain spaces!");
+//   }
+// } else {
+//   console.log("PASSWORD TOO SHORT! Must be 6+ characters");
+// }
 
-function getColor(phrase) {
-  //WRITE YOUR CODE BETWEEN THIS LINE: ↓ ↓ ↓ ↓
-  return phrase === "stop"
-    ? "red"
-    : phrase === "slow"
-    ? "yellow"
-    : phrase === "go"
-    ? "green"
-    : "purple";
+// function getColor(phrase) {
+//   //WRITE YOUR CODE BETWEEN THIS LINE: ↓ ↓ ↓ ↓
+//   //   return phrase === "stop"
+//   //     ? "red"
+//   //     : phrase === "slow"
+//   //     ? "yellow"
+//   //     : phrase === "go"
+//   //     ? "green"
+//   //     : "purple";
 
-  //AND THIS LINE ↑↑↑↑↑
-}
+//   if (condition) {
+//   }
+//   if (condition) {
+//   }
+
+//   //AND THIS LINE ↑↑↑↑↑
+// }
 
 console.log(getColor("stop"));
+
+const mystery = "Doggy7"; //CHANGE THIS VALUE TO MAKE THE CONDITIONAL BELOW TRUE
+
+// LEAVE THIS CODE ALONE! (pretty please)
+if (mystery[0] === "P" && mystery.length > 5 && mystery.indexOf("7") !== -1) {
+  console.log("YOU GOT IT!!!");
+}
+console.log(mystery.indexOf("7"));
