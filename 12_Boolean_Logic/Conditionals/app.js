@@ -11,6 +11,8 @@ console.log(random);
 
 random < 0.5 ? "it works fine" : "false";
 
+console.log(random);
+
 // =====================
 // PROMPT EXAMPLE
 // =====================
