@@ -1,33 +1,33 @@
-// =====================
-// BASIC IF/ELSE
-// =====================
-let random = Math.random();
-if (random < 0.5) {
-  console.log("YOUR NUMBER IS LESS THAN 0.5!!!");
-} else {
-  console.log("YOUR NUMBER IS GREATER (OR EQUAL) THAN 0.5!!!");
-}
-console.log(random);
+// // =====================
+// // BASIC IF/ELSE
+// // =====================
+// let random = Math.random();
+// if (random < 0.5) {
+//   console.log("YOUR NUMBER IS LESS THAN 0.5!!!");
+// } else {
+//   console.log("YOUR NUMBER IS GREATER (OR EQUAL) THAN 0.5!!!");
+// }
+// console.log(random);
 
-random < 0.5 ? "it works fine" : "false";
+// random < 0.5 ? "it works fine" : "false";
 
-console.log(random);
+// console.log(random);
 
-// =====================
-// PROMPT EXAMPLE
-// =====================
+// // =====================
+// // PROMPT EXAMPLE
+// // =====================
 
-const dayOfWeek = prompt("ENTER A DAY").toLowerCase();
+// // const dayOfWeek = prompt("ENTER A DAY").toLowerCase();
 
-if (dayOfWeek === "monday") {
-  console.log("UGHHH I HATE MONDAYS!");
-} else if (dayOfWeek === "saturday") {
-  console.log("YAY I LOVE SATURDAYS!");
-} else if (dayOfWeek === "friday") {
-  console.log("FRIDAYS ARE DECENT, ESPECIALLY AFTER WORK!");
-} else {
-  console.log("MEH");
-}
+// if (dayOfWeek === "monday") {
+//   console.log("UGHHH I HATE MONDAYS!");
+// } else if (dayOfWeek === "saturday") {
+//   console.log("YAY I LOVE SATURDAYS!");
+// } else if (dayOfWeek === "friday") {
+//   console.log("FRIDAYS ARE DECENT, ESPECIALLY AFTER WORK!");
+// } else {
+//   console.log("MEH");
+// }
 
 // =====================
 // TICKET PRICE EXAMPLE
@@ -95,3 +95,17 @@ if (mystery[0] === "P" && mystery.length > 5 && mystery.indexOf("7") !== -1) {
   console.log("YOU GOT IT!!!");
 }
 console.log(mystery.indexOf("7"));
+
+// DO NOT TOUCH!!! (please)
+const airplaneSeats = [
+  ["Ruth", "Anthony", "Stevie"],
+  ["Amelia", "Pedro", "Maya"],
+  ["Xavier", "Ananya", "Luis"],
+  ["Luke", null, "Deniz"],
+  ["Rin", "Sakura", "Francisco"],
+];
+airplaneSeats[3][1] = "Hugo";
+
+console.log(airplaneSeats);
+
+// YOUR CODE GOES BELOW THIS LINE:
