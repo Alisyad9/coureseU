@@ -86,8 +86,6 @@ if (age < 5) {
 //   //AND THIS LINE ↑↑↑↑↑
 // }
 
-console.log(getColor("stop"));
-
 const mystery = "Doggy7"; //CHANGE THIS VALUE TO MAKE THE CONDITIONAL BELOW TRUE
 
 // LEAVE THIS CODE ALONE! (pretty please)
@@ -106,6 +104,32 @@ const airplaneSeats = [
 ];
 airplaneSeats[3][1] = "Hugo";
 
-console.log(airplaneSeats);
+console.log(airplaneSeats[3][1]);
 
 // YOUR CODE GOES BELOW THIS LINE:
+
+// const array = [];
+// array.push("start");
+// for (const name of ["amir", "betty"]) {
+//   setTimeout(() => array.push("processing " + name), 0);
+// }
+// array.push("end");
+// array;
+
+const array = [];
+array.push("before");
+
+const promise = Promise.resolve("some value")
+  .then(() => {
+    array.push("then1");
+  })
+  .then(() => {
+    array.push("then2");
+  })
+  .then(() => {
+    return array;
+  });
+
+array.push("after");
+promise;
+console.log(toString(promise));
