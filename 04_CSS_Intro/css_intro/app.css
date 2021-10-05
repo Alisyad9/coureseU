@@ -45,14 +45,14 @@ header a {
 #board :nth-of-type(n) {
   background-color: red;
 }
-.card {
+/* .card {
   width: 210px;
   border: 1px solid grey;
   border-radius: 5px;
   text-align: center;
-}
-img {
+} */
+/* img {
   width: 200px;
   border: 5px solid rgb(236, 183, 191);
   border-radius: 50%;
-}
+} */
