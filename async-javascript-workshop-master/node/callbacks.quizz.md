@@ -30,7 +30,12 @@ The below code swallows the error and doesn't pass it up the chain, make it pass
 const fs = require("fs");
 
 function readFileThenDo(next) {
-  fs.readFile("./blah.nofile", (err, data) => {
+  fs.readFile("./generators.md", { encoding: "utf8" }, (err, data) => {
+    if (err){
+
+      throw err;
+
+    }
     next(data);
   });
 }
