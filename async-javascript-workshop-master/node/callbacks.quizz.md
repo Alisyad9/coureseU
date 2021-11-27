@@ -30,7 +30,7 @@ The below code swallows the error and doesn't pass it up the chain, make it pass
 const fs = require("fs");
 
 function readFileThenDo(next) {
-  fs.readFile("./generators.md", { encoding: "utf8" }, (err, data) => {
+  fs.readFile("./files/demofile.txt", { encoding: "utf8" }, (err, data) => {
     if (err){
 
       throw err;
@@ -59,7 +59,11 @@ function readFileThenDo(next) {
   });
 }
 // Hint use try..catch
+try {
 readFileThenDo(data => {
   console.log(data);
 });
+} catch (err) {
+  console.log('moo',err)
+}
 ```

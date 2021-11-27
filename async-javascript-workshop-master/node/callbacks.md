@@ -8,8 +8,8 @@
 
 ```js
 const fs = require("fs");
-
-fs.readFile("./files/demofile.txt1", { encoding: "utf8" }, (err, data) => {
+function readFileThenDo(next) {
+fs.readFile("./files/demofile.txt", { encoding: "utf8" }, (err, data) => {
   if (err) {
     next(err); // <- can pass up the chain
 
@@ -17,8 +17,15 @@ fs.readFile("./files/demofile.txt1", { encoding: "utf8" }, (err, data) => {
     // return
     // throw err; // <- can error and exit
   } else {
-    console.log(data);
+    next(data);
   }
+});
+}
+// readFileThenDo(err => {
+//   console.log(err);
+// });
+readFileThenDo((data,err)=> {
+  console.log(data || err);
 });
 ```
 
