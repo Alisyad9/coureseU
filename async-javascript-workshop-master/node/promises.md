@@ -83,7 +83,7 @@ Any values we pass to the `resolve` and `reject` functions are passed along to t
 
 ```js
 function doAsyncTask() {
-  let error = false;
+  let error = true;
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (error) {
@@ -95,7 +95,8 @@ function doAsyncTask() {
   });
 }
 
-doAsyncTask().then(val => console.log(val), err => console.error(err));
+
+doAsyncTask().then(val => console.log(val), err => console.log(err));
 ```
 
 <!-- 🤔🤔🤔🤔🤔 QUIZ 1 🤔🤔🤔🤔🤔 -->
@@ -128,12 +129,15 @@ In the above example, even though the Promise has resolved _before_ we added the
 ## Promise is really async
 
 ```js
+
 function doAsyncTask() {
-  return Promise.resolve();
+  return Promise.resolve('done');
 }
 
-doAsyncTask().then(_ => console.log(message)); // <-- Unlike callbacks, promises are always async
+doAsyncTask().then(  (done) => {
+  console.log(message,done)}); // <-- Unlike callbacks, promises are always async
 let message = "Promise Resolved";
+
 ```
 
 ## Chaining
@@ -145,7 +149,7 @@ const prom = Promise.resolve("done");
 prom
   .then(val => {
     console.log(val);
-    return "done2"; // <-- !NOTE: We have to return something, otherwise it doesn't get passed
+   // return "done2"; // <-- !NOTE: We have to return something, otherwise it doesn't get passed
   })
   .then(val => console.log(val));
 // 'done'
@@ -172,7 +176,7 @@ const prom = Promise.resolve("done");
 prom.then(val => {
   console.log(val);
   return "done2";
-});
+}).then(val => console.log(val));
 
 prom.then(val => console.log(val)); // <-- Doesn't get passed the result of the previous then
 // 'done'

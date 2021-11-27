@@ -16,7 +16,7 @@ function readFile(filename, encoding) {
     });
   });
 }
-readFile("./files/demofile.txt", "utf-8").then(
+readFile("./files/demofile.md", "utf-8").then(
   data => console.log("File Read", data),
   err => console.error("Failed To Read File", err)
 );
@@ -51,7 +51,7 @@ function readFile(filename, encoding) {
 }
 
 // Starting to look like callback hell?
-readFile("./files/demofile.txt", "utf-8").then(
+readFile("./files/demofile.md", "utf-8").then(
   data => {
     gzip(data).then(
       res => console.log(res),
