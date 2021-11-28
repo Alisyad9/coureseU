@@ -1,7 +1,7 @@
 import '../css/ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 
-function ExpenseItem({ expenses, title, amount, date }) {
+function ExpenseItem({ title, amount, date }) {
   // // console.log(title, amount);
   // const map1 = new Map();
   // map1.set(expenses);

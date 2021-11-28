@@ -1,5 +1,6 @@
 import Test from './components/Test';
-import ExpenseItem from './components/ExpenseItems';
+import ExpenseItems from './components/ExpenseItems';
+import Expenses from './components/Expenses';
 
 function App() {
   // const expenses = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
@@ -28,12 +29,14 @@ function App() {
     <div>
       {/* <h2>Let's get started!</h2>
       <p>this is visible</p> */}
-      <ExpenseItem
+      {/* <ExpenseItems
         expenses={expenses}
         title={expenses[0].title}
         amount={expenses[0].amount}
         date={expenses[0].date}
-      />
+      /> */}
+      <Expenses expenses={expenses} />
+
       {/* <Test /> */}
     </div>
   );
