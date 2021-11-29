@@ -3,7 +3,7 @@ import ExpenseItems from './components/ExpenseItems';
 import Expenses from './components/Expenses';
 import React from 'react';
 
-function App() {
+const App = () => {
   // const expenses = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   const expenses = [
     {
@@ -33,6 +33,6 @@ function App() {
   //   React.createElement('h2', {}, "Let's get started"),
   //   React.createElement(Expenses, { expenses: expenses })
   // );
-}
+};
 
 export default App;
