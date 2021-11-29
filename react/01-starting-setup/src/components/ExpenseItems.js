@@ -1,12 +1,18 @@
 import '../css/ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import Card from './Card';
+import React, { useState } from 'react';
+
+const list = ['chicken', 'beef', 'lamp'];
 
 function ExpenseItem({ title, amount, date }) {
+  const [newtitle, setTitle] = useState(title); //hooks inside the component function
+
   // console.log(title);
   function click() {
-    title = 'updated';
-    console.log(title);
+    setTitle(list[0]);
+
+    console.log(newtitle);
   }
   // // console.log(title, amount);
   // const map1 = new Map();
@@ -27,7 +33,7 @@ function ExpenseItem({ title, amount, date }) {
     <Card className="expense-item">
       <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{newtitle}</h2>
         <div className="expense-item__price">£{amount}</div>
       </div>
       <button onClick={click}> change tittle</button>
