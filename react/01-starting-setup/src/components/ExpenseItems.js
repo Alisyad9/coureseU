@@ -3,6 +3,11 @@ import ExpenseDate from './ExpenseDate';
 import Card from './Card';
 
 function ExpenseItem({ title, amount, date }) {
+  // console.log(title);
+  function click() {
+    title = 'updated';
+    console.log(title);
+  }
   // // console.log(title, amount);
   // const map1 = new Map();
   // map1.set(expenses);
@@ -25,7 +30,7 @@ function ExpenseItem({ title, amount, date }) {
         <h2>{title}</h2>
         <div className="expense-item__price">£{amount}</div>
       </div>
-      <button> change tittle</button>
+      <button onClick={click}> change tittle</button>
     </Card>
   );
 }
