@@ -33,6 +33,21 @@ const App = () => {
   //   React.createElement('h2', {}, "Let's get started"),
   //   React.createElement(Expenses, { expenses: expenses })
   // );
+  return (
+    <div>
+      {/* <h2>Let's get started!</h2>
+      <p>this is visible</p> */}
+      {/* <ExpenseItems
+        expenses={expenses}
+        title={expenses[0].title}
+        amount={expenses[0].amount}
+        date={expenses[0].date}
+      /> */}
+      <Expenses expenses={expenses} />
+
+      {/* <Test /> */}
+    </div>
+  );
 };
 
 export default App;
