@@ -1,18 +1,20 @@
 // import ExpenseItems from './components/ExpenseItems';
 import ExpenseItems from './ExpenseItems';
 import '../css/Expenses.css';
+import Card from './Card';
 
 function Expenses({ expenses }) {
-  // console.log(expenses);
+  console.log(expenses.map((list) => list));
+
   return (
-    <div className="expenses">
+    <Card className="expenses">
       <ExpenseItems
         // expenses={expenses}
         title={expenses[0].title}
         amount={expenses[0].amount}
         date={expenses[0].date}
       />
-    </div>
+    </Card>
   );
 }
 
