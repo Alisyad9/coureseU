@@ -10,7 +10,7 @@ function Expenses({ expenses }) {
     <Card className="expenses">
       <ExpenseItems
         // expenses={expenses}
-        title={expenses[0].title}
+        title={expenses[1].title}
         amount={expenses[0].amount}
         date={expenses[0].date}
       />
