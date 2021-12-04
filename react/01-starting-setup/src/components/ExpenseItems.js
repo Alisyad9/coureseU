@@ -10,7 +10,7 @@ function ExpenseItem({ title, amount, date }) {
 
   // console.log(title);
   function click() {
-    setTitle(list[0]);
+    setTitle(list.map((result) => result[0]));
 
     console.log(newtitle);
   }
