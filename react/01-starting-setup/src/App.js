@@ -44,8 +44,9 @@ const App = () => {
         amount={expenses[0].amount}
         date={expenses[0].date}
       /> */}
-      <Expenses expenses={expenses} />
       <NewExpense />
+      <Expenses expenses={expenses} />
+
       {/* <Test /> */}
     </div>
   );
