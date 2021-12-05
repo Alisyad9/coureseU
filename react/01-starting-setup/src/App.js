@@ -2,6 +2,7 @@ import Test from './components/Test';
 import ExpenseItems from './components/ExpenseItems';
 import Expenses from './components/Expenses';
 import React from 'react';
+import NewExpense from './components/NewExpense/NewExpense';
 
 const App = () => {
   // const expenses = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
@@ -44,7 +45,7 @@ const App = () => {
         date={expenses[0].date}
       /> */}
       <Expenses expenses={expenses} />
-
+      <NewExpense />
       {/* <Test /> */}
     </div>
   );
