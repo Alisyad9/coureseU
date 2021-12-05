@@ -5,7 +5,7 @@ const NewExpense = () => {
   return (
     <div className="new-expense">
       <form>yes</form>
-      <button> change tittle</button>
+      <button> change </button>
     </div>
   );
 };
