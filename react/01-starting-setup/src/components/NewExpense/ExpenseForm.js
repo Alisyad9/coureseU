@@ -10,21 +10,18 @@ const ExpenseForm = () => {
           <input type="text" className="" />
         </div>
 
-        <div className="new-expense__controls">
+        <div className="new-expense__control">
           <label>Amount</label>
           <input type="Number" min="0.01" step="0.01" />
         </div>
-      </div>
 
-      <div className="new-expense__control">
-        <label>Date</label>
-        <input type="date" min="2021-12-12" step="2022-12-12" />
+        <div className="new-expense__control">
+          <label>Date</label>
+          <input type="date" min="2021-12-12" step="2022-12-12" />
+        </div>
       </div>
-
-      <div>
-        <button type="submit" className="new-expense__actions">
-          submit
-        </button>
+      <div className="new-expense__actions">
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   );
