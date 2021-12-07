@@ -1,7 +1,7 @@
 import Test from './components/Test';
 import ExpenseItems from './components/ExpenseItems';
 import Expenses from './components/Expenses';
-import React from 'react';
+// import React from 'react';
 import NewExpense from './components/NewExpense/NewExpense';
 
 const App = () => {
