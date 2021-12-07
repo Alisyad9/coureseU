@@ -4,11 +4,15 @@ import '../../css/ExpenseForm.css';
 const ExpenseForm = () => {
   const [title, setTitle] = React.useState('');
 
-  function onClickHandler(e) {
+  const onClickHandler = (e) => {
     // console.log('this is the event =>', e.target.value);
 
     return setTitle(e.target.value);
-  }
+  };
+
+  const amountChangeHandler = () => {
+    console.log('amount Change Handler --->');
+  };
 
   console.log('title value ---> ', title);
 
@@ -22,7 +26,12 @@ const ExpenseForm = () => {
 
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="Number" min="0.01" step="0.01" />
+          <input
+            type="Number"
+            min="0.01"
+            step="0.01"
+            onChange={amountChangeHandler}
+          />
         </div>
 
         <div className="new-expense__control">
