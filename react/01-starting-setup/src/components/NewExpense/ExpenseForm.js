@@ -2,12 +2,22 @@ import React from 'react'; //not actually required
 
 import '../../css/ExpenseForm.css';
 const ExpenseForm = () => {
+  const [title, setTitle] = React.useState('');
+
+  function onClickHandler(e) {
+    // console.log('this is the event =>', e.target.value);
+
+    return setTitle(e.target.value);
+  }
+
+  console.log('title value ---> ', title);
+
   return (
     <form>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" className="" />
+          <input type="text" onChange={onClickHandler} />
         </div>
 
         <div className="new-expense__control">
