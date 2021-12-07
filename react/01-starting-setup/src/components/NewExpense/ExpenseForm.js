@@ -4,6 +4,7 @@ import '../../css/ExpenseForm.css';
 const ExpenseForm = () => {
   const [title, setTitle] = React.useState('');
   const [amount, setAmount] = React.useState('');
+  const [date, setDate] = React.useState('');
 
   const onClickHandler = (e) => {
     // console.log('this is the event =>', e.target.value);
@@ -15,10 +16,13 @@ const ExpenseForm = () => {
     console.log('amount Change Handler --->');
     return setAmount(e.target.value);
   };
+  const dateChangeHandler = (e) => {
+    // console.log('amount Change Handler --->');
+    return setDate(e.target.value);
+  };
 
-  console.log('title value ---> ', title);
   console.log('amount value ---> ', amount);
-
+  console.log('date value ---> ', date);
   return (
     <form>
       <div className="new-expense__controls">
@@ -39,7 +43,12 @@ const ExpenseForm = () => {
 
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" min="2021-12-12" step="2022-12-12" />
+          <input
+            type="date"
+            min="2021-12-12"
+            step="2022-12-12"
+            onChange={dateChangeHandler}
+          />
         </div>
       </div>
       <div className="new-expense__actions">
