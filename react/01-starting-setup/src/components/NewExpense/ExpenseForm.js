@@ -3,6 +3,7 @@ import React from 'react'; //not actually required
 import '../../css/ExpenseForm.css';
 const ExpenseForm = () => {
   const [title, setTitle] = React.useState('');
+  const [amount, setAmount] = React.useState('');
 
   const onClickHandler = (e) => {
     // console.log('this is the event =>', e.target.value);
@@ -10,11 +11,13 @@ const ExpenseForm = () => {
     return setTitle(e.target.value);
   };
 
-  const amountChangeHandler = () => {
+  const amountChangeHandler = (e) => {
     console.log('amount Change Handler --->');
+    return setAmount(e.target.value);
   };
 
   console.log('title value ---> ', title);
+  console.log('amount value ---> ', amount);
 
   return (
     <form>
