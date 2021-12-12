@@ -46,11 +46,21 @@ const ExpenseForm = () => {
     });
   };
 
-  console.log('amount Input ---> ', userInput.amount);
-  console.log('date value ---> ', userInput.date);
-  console.log('tile value ---> ', userInput.title);
+  // console.log('amount Input ---> ', userInput.amount);
+  // console.log('date value ---> ', userInput.date);
+  // console.log('tile value ---> ', userInput.title);
+  ////////////////////////////////////////////////////////////////
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log('inside the submit handler userInput---->', userInput);
+
+    const expenseData = {
+      ...userInput,
+    };
+    console.log('inside submitHandler, expenseData', expenseData);
+  };
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
@@ -78,7 +88,7 @@ const ExpenseForm = () => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
+        <button type="submit">submit</button>
       </div>
     </form>
   );
