@@ -14,26 +14,41 @@ const ExpenseForm = () => {
   const onClickHandler = (e) => {
     // console.log('this is the event =>', e.target.value);
 
-    return setUserInput({
-      ...userInput,
-      title: e.target.value,
+    // setUserInput({
+    //   ...userInput,
+    //   title: e.target.value,
+    // });
+    setUserInput((previousState) => {
+      return {
+        ...previousState,
+        title: e.target.value,
+      };
     });
   };
 
   const amountChangeHandler = (e) => {
     console.log('amount Change Handler --->');
-    return setUserInput({
-      amount: e.target.value,
+    setUserInput((previousState) => {
+      return {
+        ...previousState,
+        amount: e.target.value,
+      };
     });
   };
   const dateChangeHandler = (e) => {
     // console.log('amount Change Handler --->');
-    return setUserInput({ date: e.target.value });
+
+    setUserInput((previousState) => {
+      return {
+        ...previousState,
+        date: e.target.value,
+      };
+    });
   };
 
-  console.log('user Input ---> ', userInput.amount);
-  // console.log('date value ---> ', date);
-  // console.log('date value ---> ', title);
+  console.log('amount Input ---> ', userInput.amount);
+  console.log('date value ---> ', userInput.date);
+  console.log('tile value ---> ', userInput.title);
   return (
     <form>
       <div className="new-expense__controls">
