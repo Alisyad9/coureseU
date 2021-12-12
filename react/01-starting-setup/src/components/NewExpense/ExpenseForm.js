@@ -58,18 +58,25 @@ const ExpenseForm = () => {
       ...userInput,
     };
     console.log('inside submitHandler, expenseData', expenseData);
+    setUserInput({ title: '', amount: '', date: '' });
   };
+
   return (
     <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={onClickHandler} />
+          <input
+            type="text"
+            value={userInput.title}
+            onChange={onClickHandler}
+          />
         </div>
 
         <div className="new-expense__control">
           <label>Amount</label>
           <input
+            value={userInput.amount}
             type="Number"
             min="0.01"
             step="0.01"
@@ -80,6 +87,7 @@ const ExpenseForm = () => {
         <div className="new-expense__control">
           <label>Date</label>
           <input
+            value={userInput.date}
             type="date"
             min="2021-12-12"
             step="2022-12-12"
