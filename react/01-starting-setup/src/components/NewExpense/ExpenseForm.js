@@ -2,27 +2,38 @@ import React from 'react'; //not actually required
 
 import '../../css/ExpenseForm.css';
 const ExpenseForm = () => {
-  const [title, setTitle] = React.useState('');
-  const [amount, setAmount] = React.useState('');
-  const [date, setDate] = React.useState('');
+  // const [title, setTitle] = React.useState('');
+  // const [amount, setAmount] = React.useState('');
+  // const [date, setDate] = React.useState('');
+  const [userInput, setUserInput] = React.useState({
+    title: '',
+    amount: '',
+    date: '',
+  });
 
   const onClickHandler = (e) => {
     // console.log('this is the event =>', e.target.value);
 
-    return setTitle(e.target.value);
+    return setUserInput({
+      ...userInput,
+      title: e.target.value,
+    });
   };
 
   const amountChangeHandler = (e) => {
     console.log('amount Change Handler --->');
-    return setAmount(e.target.value);
+    return setUserInput({
+      amount: e.target.value,
+    });
   };
   const dateChangeHandler = (e) => {
     // console.log('amount Change Handler --->');
-    return setDate(e.target.value);
+    return setUserInput({ date: e.target.value });
   };
 
-  console.log('amount value ---> ', amount);
-  console.log('date value ---> ', date);
+  console.log('user Input ---> ', userInput.amount);
+  // console.log('date value ---> ', date);
+  // console.log('date value ---> ', title);
   return (
     <form>
       <div className="new-expense__controls">
