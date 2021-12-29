@@ -1,7 +1,7 @@
 import React from 'react'; //not actually required
 
 import '../../css/ExpenseForm.css';
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [title, setTitle] = React.useState('');
   const [amount, setAmount] = React.useState('');
   const [date, setDate] = React.useState('');
@@ -53,15 +53,18 @@ const ExpenseForm = () => {
     // console.log('inside the submit handler userInput---->', userInput);
 
     const expenseData = {
-      title,
-      amount,
-      date,
+      title: title,
+      amount: amount,
+      date: new Date(date),
     };
     // const expenseData = {
     //   ...userInput,
     // };
-    console.log('inside submitHandler, expenseData', expenseData);
+    // console.log('inside submitHandler, expenseData', expenseData);
     // setUserInput({ title: '', amount: '', date: '' });
+
+    props.onSaveExpenseData(expenseData);
+
     setTitle('');
     setDate('');
     setAmount('');

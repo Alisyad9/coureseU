@@ -2,12 +2,21 @@ import React from 'react';
 import '../../css/NewExpense.css';
 import ExpenseForm from './ExpenseForm';
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+  console.log('props inside new expense', props.onAddExpense());
+  const onSaveExpenseDataHandler = (data) => {
+    const expenseData = {
+      ...data,
+      test: 'hello',
+      id: Math.random().toString(),
+    };
+
+    // props.onAddExpense(expenseData);
+    console.log(expenseData);
+  };
   return (
     <div className="new-expense">
-      <ExpenseForm />
-      {/* <form>yes</form>
-      <button> change </button> */}
+      <ExpenseForm onSaveExpenseData={onSaveExpenseDataHandler} />
     </div>
   );
 };

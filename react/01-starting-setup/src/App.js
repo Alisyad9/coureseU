@@ -34,6 +34,10 @@ const App = () => {
   //   React.createElement('h2', {}, "Let's get started"),
   //   React.createElement(Expenses, { expenses: expenses })
   // );
+  const addExpenseHandler = (expenses) => {
+    console.log('inside the App.js addExpenseHandler function ');
+    console.log('inside App.js expenses', expenses);
+  };
   return (
     <div>
       {/* <h2>Let's get started!</h2>
@@ -44,7 +48,7 @@ const App = () => {
         amount={expenses[0].amount}
         date={expenses[0].date}
       /> */}
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
 
       {/* <Test /> */}
