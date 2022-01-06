@@ -3,9 +3,8 @@ import ExpenseDate from './ExpenseDate';
 import Card from './Card';
 import React, { useState } from 'react';
 
-const list = ['chicken', 'beef', 'lamp'];
-
-function ExpenseItem({ title, amount, date }) {
+function ExpenseItem(props) {
+  console.log('inside expense item title', props.price);
   // console.log(title);
   // function click() {
   //   setTitle(list.map((result) => result[0]));
@@ -29,10 +28,10 @@ function ExpenseItem({ title, amount, date }) {
 
   return (
     <Card className="expense-item">
-      <ExpenseDate date={date} />
+      <ExpenseDate date={props.date} />
       <div className="expense-item__description">
-        <h2>{title}</h2>
-        <div className="expense-item__price">£{amount}</div>
+        <h2>{props.title}</h2>
+        <div className="expense-item__price">£{props.amount}</div>
       </div>
       {/* <button onClick={click}> change tittle</button> */}
     </Card>
