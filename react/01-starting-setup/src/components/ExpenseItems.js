@@ -6,14 +6,12 @@ import React, { useState } from 'react';
 const list = ['chicken', 'beef', 'lamp'];
 
 function ExpenseItem({ title, amount, date }) {
-  const [newtitle, setTitle] = useState(title); //hooks inside the component function
-
   // console.log(title);
-  function click() {
-    setTitle(list.map((result) => result[0]));
+  // function click() {
+  //   setTitle(list.map((result) => result[0]));
 
-    console.log(newtitle);
-  }
+  //   console.log(newtitle);
+  // }
   // // console.log(title, amount);
   // const map1 = new Map();
   // map1.set(expenses);
@@ -33,10 +31,10 @@ function ExpenseItem({ title, amount, date }) {
     <Card className="expense-item">
       <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2>{newtitle}</h2>
+        <h2>{title}</h2>
         <div className="expense-item__price">£{amount}</div>
       </div>
-      <button onClick={click}> change tittle</button>
+      {/* <button onClick={click}> change tittle</button> */}
     </Card>
   );
 }
