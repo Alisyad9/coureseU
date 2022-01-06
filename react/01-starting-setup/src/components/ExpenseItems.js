@@ -4,7 +4,7 @@ import Card from './Card';
 import React, { useState } from 'react';
 
 function ExpenseItem(props) {
-  console.log('inside expense item title', props.price);
+  // console.log('inside expense item title', props.title);
   // console.log(title);
   // function click() {
   //   setTitle(list.map((result) => result[0]));

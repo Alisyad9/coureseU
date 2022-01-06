@@ -3,7 +3,7 @@ import React from 'react';
 import '../css/ExpensesFilter.css';
 
 const ExpensesFilter = (props) => {
-  console.log('props in expensefilter0', props);
+  // console.log('props in expensefilter0', props);
   // console.log(props.filterYear);
   // function selectHandler(e) {
   //   console.log(e.target.value);

@@ -4,10 +4,12 @@ import ExpensesFilter from './ExpensesFilter';
 import '../css/Expenses.css';
 import Card from './Card';
 import React, { useState } from 'react';
-import ExpenseItem from './ExpenseItems';
 
-function Expenses({ expenses }) {
-  console.log(expenses.map((list) => list.title));
+function Expenses(props) {
+  console.log(
+    'inside the expenses',
+    props.items.map((expense) => expense.amount)
+  );
   const [filterYear, setfilterYear] = useState('2021');
 
   const filterChange = (year) => {
@@ -18,17 +20,18 @@ function Expenses({ expenses }) {
   console.log(filterYear);
   return (
     <>
-      <Card className="expenses">
+      <Card className="expenses1">
         <ExpensesFilter
           ongChangeFilter={filterChange}
           filterYear={filterYear}
           setfilterYear={setfilterYear}
         />
-        {expenses.map((expenses) => (
+        {props.items.map((expense, index) => (
           <ExpenseItems
-            title={expenses.title}
-            amount={expenses.amount}
-            date={expenses.date}
+            key={expense.id}
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
           />
         ))}
         {/* <ExpenseItems
