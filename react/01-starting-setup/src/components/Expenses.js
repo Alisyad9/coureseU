@@ -19,6 +19,11 @@ function Expenses(props) {
   //   expense.date.getFullYear()
   // );
 
+  const filteredExpenses = props.items.filter(
+    (expense) => expense.date.getFullYear() === parseInt(filterYear)
+  );
+
+  console.log('length value of filteredExpenses', filteredExpenses.length);
   return (
     <>
       <Card className="expenses1">
@@ -27,19 +32,22 @@ function Expenses(props) {
           filterYear={filterYear}
           setfilterYear={setfilterYear}
         />
-        {props.items
-          .filter(
-            (expense) => expense.date.getFullYear() === parseInt(filterYear)
-          )
-
-          .map((expense, index) => (
+        {filteredExpenses.length === 0 && (
+          <p style={{ color: 'white' }}>nothing has been found</p>
+        )}
+        {
+          // filteredExpenses.length === 0 ? (
+          //   <p style={{ color: 'white' }}>nothing has been found</p>
+          // ) :
+          filteredExpenses.map((expense, index) => (
             <ExpenseItems
               key={expense.id}
               title={expense.title}
               amount={expense.amount}
               date={expense.date}
             />
-          ))}
+          ))
+        }
         {/* <ExpenseItems
           // expenses={expenses}
           title={expenses[0].title}
