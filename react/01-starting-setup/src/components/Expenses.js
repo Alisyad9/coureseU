@@ -6,10 +6,6 @@ import Card from './Card';
 import React, { useState } from 'react';
 
 function Expenses(props) {
-  console.log(
-    'inside the expenses',
-    props.items.map((expense) => expense.amount)
-  );
   const [filterYear, setfilterYear] = useState('2021');
 
   const filterChange = (year) => {
@@ -17,7 +13,12 @@ function Expenses(props) {
     setfilterYear(year);
   };
 
-  console.log(filterYear);
+  props.items.filter((expense) => console.log(expense.date.getFullYear()));
+
+  // const filteredExpenses = props.items.map((expense) =>
+  //   expense.date.getFullYear()
+  // );
+
   return (
     <>
       <Card className="expenses1">
@@ -26,14 +27,19 @@ function Expenses(props) {
           filterYear={filterYear}
           setfilterYear={setfilterYear}
         />
-        {props.items.map((expense, index) => (
-          <ExpenseItems
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}
+        {props.items
+          .filter(
+            (expense) => expense.date.getFullYear() === parseInt(filterYear)
+          )
+
+          .map((expense, index) => (
+            <ExpenseItems
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            />
+          ))}
         {/* <ExpenseItems
           // expenses={expenses}
           title={expenses[0].title}
