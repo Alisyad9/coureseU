@@ -39,14 +39,15 @@ function Expenses(props) {
           // filteredExpenses.length === 0 ? (
           //   <p style={{ color: 'white' }}>nothing has been found</p>
           // ) :
-          filteredExpenses.map((expense, index) => (
-            <ExpenseItems
-              key={expense.id}
-              title={expense.title}
-              amount={expense.amount}
-              date={expense.date}
-            />
-          ))
+          filteredExpenses.length > 0 &&
+            filteredExpenses.map((expense, index) => (
+              <ExpenseItems
+                key={expense.id}
+                title={expense.title}
+                amount={expense.amount}
+                date={expense.date}
+              />
+            ))
         }
         {/* <ExpenseItems
           // expenses={expenses}
