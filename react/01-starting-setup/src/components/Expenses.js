@@ -13,17 +13,31 @@ function Expenses(props) {
     setfilterYear(year);
   };
 
-  props.items.filter((expense) => console.log(expense.date.getFullYear()));
+  // props.items.filter((expense) => console.log(expense.date.getFullYear()));
 
-  // const filteredExpenses = props.items.map((expense) =>
-  //   expense.date.getFullYear()
-  // );
+  /* making the filter function */
 
   const filteredExpenses = props.items.filter(
     (expense) => expense.date.getFullYear() === parseInt(filterYear)
   );
 
-  console.log('length value of filteredExpenses', filteredExpenses.length);
+  /* the expense content */
+
+  let expensesContent = (
+    <p style={{ color: 'white' }}>nothing has been found</p>
+  );
+
+  if (filteredExpenses.length > 0) {
+    expensesContent = filteredExpenses.map((expense, index) => (
+      <ExpenseItems
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+    ));
+  }
+
   return (
     <>
       <Card className="expenses1">
@@ -32,22 +46,16 @@ function Expenses(props) {
           filterYear={filterYear}
           setfilterYear={setfilterYear}
         />
-        {filteredExpenses.length === 0 && (
+        {/* {filteredExpenses.length === 0 && (
           <p style={{ color: 'white' }}>nothing has been found</p>
-        )}
+        )} */}
+        {/* {filteredExpenses.length === 0 && expensesContent} */}
         {
           // filteredExpenses.length === 0 ? (
           //   <p style={{ color: 'white' }}>nothing has been found</p>
           // ) :
-          filteredExpenses.length > 0 &&
-            filteredExpenses.map((expense, index) => (
-              <ExpenseItems
-                key={expense.id}
-                title={expense.title}
-                amount={expense.amount}
-                date={expense.date}
-              />
-            ))
+          // filteredExpenses.length > 0 && expensesContent
+          expensesContent
         }
         {/* <ExpenseItems
           // expenses={expenses}
