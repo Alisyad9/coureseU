@@ -1,5 +1,6 @@
 // import ExpenseItems from './components/ExpenseItems';
 import ExpenseItems from './ExpenseItems';
+import ExpensesList from './ExpensesList';
 import ExpensesFilter from './ExpensesFilter';
 import '../css/Expenses.css';
 import Card from './Card';
@@ -23,20 +24,20 @@ function Expenses(props) {
 
   /* the expense content */
 
-  let expensesContent = (
-    <p style={{ color: 'white' }}>nothing has been found</p>
-  );
+  // let expensesContent = (
+  //   <p style={{ color: 'white' }}>nothing has been found</p>
+  // );
 
-  if (filteredExpenses.length > 0) {
-    expensesContent = filteredExpenses.map((expense, index) => (
-      <ExpenseItems
-        key={expense.id}
-        title={expense.title}
-        amount={expense.amount}
-        date={expense.date}
-      />
-    ));
-  }
+  // if (filteredExpenses.length > 0) {
+  //   expensesContent = filteredExpenses.map((expense, index) => (
+  //     <ExpenseItems
+  //       key={expense.id}
+  //       title={expense.title}
+  //       amount={expense.amount}
+  //       date={expense.date}
+  //     />
+  //   ));
+  // }
 
   return (
     <>
@@ -46,6 +47,7 @@ function Expenses(props) {
           filterYear={filterYear}
           setfilterYear={setfilterYear}
         />
+        <ExpensesList filteredExpenses={filteredExpenses} />
         {/* {filteredExpenses.length === 0 && (
           <p style={{ color: 'white' }}>nothing has been found</p>
         )} */}
@@ -55,7 +57,7 @@ function Expenses(props) {
           //   <p style={{ color: 'white' }}>nothing has been found</p>
           // ) :
           // filteredExpenses.length > 0 && expensesContent
-          expensesContent
+          // expensesContent
         }
         {/* <ExpenseItems
           // expenses={expenses}

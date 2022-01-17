@@ -1,11 +1,22 @@
 import React from 'react';
-
-const ExpensesList = (props) => {
-  return (
-    <>
-      <h1>hello world</h1>
-    </>
+import ExpenseItems from './ExpenseItems';
+import '../css/ExpensesList.css';
+const ExpensesList = ({ filteredExpenses }) => {
+  let expensesContent = (
+    <p style={{ color: 'white' }}>nothing has been found</p>
   );
+
+  if (filteredExpenses.length > 0) {
+    expensesContent = filteredExpenses.map((expense, index) => (
+      <ExpenseItems
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+    ));
+  }
+  return <div className="expenses-list">{expensesContent}</div>;
 };
 
 export default ExpensesList;
