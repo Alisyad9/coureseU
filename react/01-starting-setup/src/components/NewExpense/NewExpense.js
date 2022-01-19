@@ -14,7 +14,8 @@ const NewExpense = (props) => {
     };
 
     props.onAddExpense(expenseData);
-    console.log('new Expense, esxpenseData result submitted', expenseData);
+    setButtonExpense(false);
+    // console.log('new Expense, esxpenseData result submitted', expenseData);
   };
 
   function buttonClick(e) {
