@@ -2,8 +2,14 @@ import React from 'react';
 import ExpenseItems from './ExpenseItems';
 import '../css/ExpensesList.css';
 const ExpensesList = ({ filteredExpenses }) => {
+  // if (filteredExpenses.l) {
+  //   return <h2 className="expenses-list__fallback"> Found no expenses</h2>;
+  // }
+
   let expensesContent = (
-    <p style={{ color: 'white' }}>nothing has been found</p>
+    <h2 className="expenses-list__fallback" style={{ color: 'white' }}>
+      Nothing 📭
+    </h2>
   );
 
   if (filteredExpenses.length > 0) {
