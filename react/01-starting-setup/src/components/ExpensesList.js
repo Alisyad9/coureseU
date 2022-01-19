@@ -16,7 +16,7 @@ const ExpensesList = ({ filteredExpenses }) => {
       />
     ));
   }
-  return <div className="expenses-list">{expensesContent}</div>;
+  return <ul className="expenses-list">{expensesContent}</ul>;
 };
 
 export default ExpensesList;
