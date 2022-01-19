@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../css/NewExpense.css';
 import ExpenseForm from './ExpenseForm';
 
 const NewExpense = (props) => {
-  console.log('props inside new expense', props);
-
+  const [buttonExpense, setButtonExpense] = useState(false);
   // console.log('props inside new expense', props.onAddExpense());
 
   const onSaveExpenseDataHandler = (data) => {
@@ -17,9 +16,27 @@ const NewExpense = (props) => {
     props.onAddExpense(expenseData);
     console.log('new Expense, esxpenseData result submitted', expenseData);
   };
+
+  function buttonClick(e) {
+    console.log(e.target.value);
+
+    setButtonExpense(true);
+  }
+  console.log('buttonExpense value--->', buttonExpense);
   return (
     <div className="new-expense">
-      <ExpenseForm onSaveExpenseData={onSaveExpenseDataHandler} />
+      {!buttonExpense && (
+        <button value={buttonExpense} onClick={buttonClick}>
+          Add a new expense
+        </button>
+      )}
+
+      {buttonExpense && (
+        <ExpenseForm
+          onSaveExpenseData={onSaveExpenseDataHandler}
+          newButtonExpense={setButtonExpense}
+        />
+      )}
     </div>
   );
 };
