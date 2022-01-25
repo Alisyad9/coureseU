@@ -5,7 +5,7 @@ import './CourseInput.css';
 
 const CourseInput = (props) => {
   const [enteredValue, setEnteredValue] = useState('');
-  const [userSubmitted, setUserSubmitted] = useState(false);
+  const [userSubmitted, setUserSubmitted] = useState(true);
 
   console.log(userSubmitted);
 
@@ -17,6 +17,7 @@ const CourseInput = (props) => {
     event.preventDefault();
     if (enteredValue.trim().length === 0) {
       console.log('it works fine');
+      setUserSubmitted(false);
       return 'lol';
     }
     props.onAddGoal(enteredValue);
@@ -25,8 +26,17 @@ const CourseInput = (props) => {
   return (
     <form onSubmit={formSubmitHandler}>
       <div className="form-control">
-        <label>Course Goal</label>
-        <input type="text" onChange={goalInputChangeHandler} />
+        <label style={{ color: !userSubmitted ? 'red' : 'green' }}>
+          Course Goal
+        </label>
+        <input
+          style={{
+            borderColor: !userSubmitted ? 'red' : 'green',
+            backgroundColor: !userSubmitted ? 'red' : 'transparent',
+          }}
+          type="text"
+          onChange={goalInputChangeHandler}
+        />
       </div>
       <Button type="submit">Add Goal</Button>
     </form>
