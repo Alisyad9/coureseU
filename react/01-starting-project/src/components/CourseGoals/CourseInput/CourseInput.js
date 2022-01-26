@@ -20,11 +20,12 @@ const CourseInput = (props) => {
       setUserSubmitted(false);
       return 'lol';
     }
+    setUserSubmitted(true);
     props.onAddGoal(enteredValue);
   };
 
   return (
-    <form onSubmit={formSubmitHandler}>
+    <form onSubmit={formSubmitHandler} value={userSubmitted}>
       <div className="form-control">
         <label style={{ color: !userSubmitted ? 'red' : 'green' }}>
           Course Goal
