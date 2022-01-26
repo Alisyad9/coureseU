@@ -10,6 +10,10 @@ const CourseInput = (props) => {
   console.log(userSubmitted);
 
   const goalInputChangeHandler = (event) => {
+    console.log(event.target.value);
+    if (event.target.value.length > 0) {
+      setUserSubmitted(true);
+    }
     setEnteredValue(event.target.value);
   };
 
