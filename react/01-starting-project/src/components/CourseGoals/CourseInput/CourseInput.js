@@ -1,41 +1,41 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import Button from '../../UI/Button/Button';
-import './CourseInput.css';
+import styles from './CourseInput.module.css';
 
-const FormControl = styled.div/*css*/ `
-  margin: 0.5rem 0;
+// const FormControl = styled.div/*css*/ `
+//   margin: 0.5rem 0;
 
-  & label {
-    font-weight: bold 2rem;
-    display: blue;
-    margin-bottom: 0.5rem;
-  }
+//   & label {
+//     font-weight: bold 2rem;
+//     display: blue;
+//     margin-bottom: 0.5rem;
+//   }
 
-  & input {
-    display: block;
-    width: 100%;
-    border: 1px solid #ccc;
-    font: inherit;
-    line-height: 1.5rem;
-    padding: 0 0.25rem;
-  }
+//   & input {
+//     display: block;
+//     width: 100%;
+//     border: 1px solid #ccc;
+//     font: inherit;
+//     line-height: 1.5rem;
+//     padding: 0 0.25rem;
+//   }
 
-  &.input:focus {
-    outline: none;
-    background: #fad0ec;
-    border-color: #8b005d;
-  }
+//   &.input:focus {
+//     outline: none;
+//     background: #fad0ec;
+//     border-color: #8b005d;
+//   }
 
-  &.invalid input {
-    border-color: orange;
-    background: rgb(235, 191, 111);
-  }
+//   &.invalid input {
+//     border-color: orange;
+//     background: rgb(235, 191, 111);
+//   }
 
-  &.invalid label {
-    color: red;
-  }
-`;
+//   &.invalid label {
+//     color: red;
+//   }
+// `;
 
 const CourseInput = (props) => {
   const [enteredValue, setEnteredValue] = useState('');
@@ -64,7 +64,10 @@ const CourseInput = (props) => {
 
   return (
     <form onSubmit={formSubmitHandler} value={userSubmitted}>
-      <FormControl className={` ${!userSubmitted ? 'invalid' : ''}`}>
+      <div
+        className={`${styles.form_control} ${!userSubmitted && styles.invalid}`}
+        // className={` ${!userSubmitted ? 'invalid' : ''}`}
+      >
         <label
         // style={{ color: !userSubmitted ? 'red' : 'green' }}
         >
@@ -78,7 +81,7 @@ const CourseInput = (props) => {
           type="text"
           onChange={goalInputChangeHandler}
         />
-      </FormControl>
+      </div>
       <Button type="submit">Add Goal</Button>
     </form>
   );
