@@ -13,6 +13,7 @@ const CourseInput = (props) => {
     }
     setEnteredValue(event.target.value);
   };
+  // submitting handler works fine
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
