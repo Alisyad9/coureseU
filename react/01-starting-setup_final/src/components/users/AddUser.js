@@ -1,4 +1,5 @@
 import React from 'react';
+import style from '../style/AddUser.css';
 
 const AddUser = () => {
   const [userName, setUserName] = React.useState('');
@@ -27,10 +28,21 @@ const AddUser = () => {
         id="username"
         onChange={userNameHandler}
         value={userName}
+        placeholder="enter username"
       />
       <label htmlFor="age">Age</label>
       <input type="number" id="age" onChange={ageHandler} value={age} />
-      <button type="submit"> submit</button>
+      <button type="submit " className="sumbit">
+        {' '}
+        submit
+      </button>{' '}
+      <span
+        id={style.anim}
+        className="tooltip"
+        data-tooltip="username must consist of 29 symbols."
+      >
+        ?
+      </span>
     </form>
   );
 };
