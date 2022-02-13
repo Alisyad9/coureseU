@@ -1,10 +1,12 @@
 import AddUser from './components/users/AddUser.js';
+import Card from './components/style/Card.js';
+import classes from './components/style/AddUser.module.css';
 function App() {
   return (
-    <div>
-      <h2>Let's get started!</h2>
+    <Card className={classes.test}>
       <AddUser />
-    </div>
+      <div className={classes.test}>hey</div>
+    </Card>
   );
 }
 
