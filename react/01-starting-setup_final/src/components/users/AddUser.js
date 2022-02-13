@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../style/AddUser.css';
+import classes from '../style/AddUser.module.css';
 
 const AddUser = () => {
   const [userName, setUserName] = React.useState('');
@@ -32,17 +32,17 @@ const AddUser = () => {
       />
       <label htmlFor="age">Age</label>
       <input type="number" id="age" onChange={ageHandler} value={age} />
-      <button type="submit " className="sumbit">
+      <button type="submit " className={classes.sumbit}>
         {' '}
         submit
       </button>{' '}
       <span
-        id={style.anim}
-        className="tooltip"
-        data-tooltip="username must consist of 29 symbols."
+        className={classes.tooltip}
+        data-tooltip="Make sure all the fields are filled"
       >
         ?
       </span>
+      <div className={classes.test}>test</div>
     </form>
   );
 };
