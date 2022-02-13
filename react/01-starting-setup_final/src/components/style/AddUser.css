@@ -8,6 +8,12 @@
   cursor: pointer;
 }
 
+.sumbit:hover {
+  background-color: #006c04;
+  transition: all 1s ease;
+  font-weight: 400;
+  border-radius: 0.2rem;
+}
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400');
 body {
   font-family: 'Source Sans Pro', sans-serif;
