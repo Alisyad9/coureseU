@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from '../style/AddUser.module.css';
 import Card from '../style/Card';
+import Button from '../style/Button';
 
 const AddUser = () => {
   const [userName, setUserName] = React.useState('');
@@ -45,6 +46,7 @@ const AddUser = () => {
           ?
         </span>
       </form>
+      <Button></Button>
     </Card>
   );
 };
