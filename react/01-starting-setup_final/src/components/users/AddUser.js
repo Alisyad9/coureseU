@@ -35,10 +35,10 @@ const AddUser = () => {
         />
         <label htmlFor="age">Age</label>
         <input type="number" id="age" onChange={ageHandler} value={age} />
-        <button type="submit " className={classes.sumbit}>
+        <Button type="submit " className={classes.sumbit}>
           {' '}
           submit
-        </button>{' '}
+        </Button>{' '}
         <span
           className={classes.tooltip}
           data-tooltip="Make sure all the fields are filled"
@@ -46,7 +46,6 @@ const AddUser = () => {
           ?
         </span>
       </form>
-      <Button></Button>
     </Card>
   );
 };
