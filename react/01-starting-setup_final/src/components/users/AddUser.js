@@ -44,7 +44,6 @@ const AddUser = () => {
         >
           ?
         </span>
-        <div className={classes.test}>test</div>
       </form>
     </Card>
   );
