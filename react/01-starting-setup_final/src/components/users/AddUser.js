@@ -4,10 +4,11 @@ import Card from '../style/Card';
 import Button from '../style/Button';
 
 const AddUser = () => {
+  ////////////////user state /////
   const [userName, setUserName] = React.useState('');
   const [age, setAge] = React.useState('');
-  console.log(userName);
-  console.log(age);
+
+  ////////////user state ending  /////
 
   const userNameHandler = (event) => {
     setUserName(event.target.value);
@@ -19,6 +20,14 @@ const AddUser = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    if (userName.trim().length === 0 || age.trim().length === 0) {
+      return;
+    }
+    if (+age < 1) {
+      return;
+    }
+    console.log(userName);
+    console.log(age);
     setUserName('');
     setAge('');
   };
