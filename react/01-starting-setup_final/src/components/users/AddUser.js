@@ -3,7 +3,7 @@ import classes from '../style/AddUser.module.css';
 import Card from '../style/Card';
 import Button from '../style/Button';
 
-const AddUser = () => {
+const AddUser = (props) => {
   ////////////////user state /////
   const [userName, setUserName] = React.useState('');
   const [age, setAge] = React.useState('');
@@ -26,7 +26,7 @@ const AddUser = () => {
     if (+age < 1) {
       return;
     }
-    console.log(userName);
+    props.onAddUser(userName, age);
     console.log(age);
     setUserName('');
     setAge('');
