@@ -1,9 +1,9 @@
 import AddUser from './components/users/AddUser.js';
-import Card from './components/style/Card.js';
-import classes from './components/style/AddUser.module.css';
+// import Card from './components/style/Card.js';
+// import classes from './components/style/AddUser.module.css';
 import UserList from './components/users/UserList.js';
 import React, { useState } from 'react';
-import ErrorModal from './components/style/ErrorModal.js';
+// import ErrorModal from './components/style/ErrorModal.js';
 function App() {
   const [data, setData] = useState([]);
 
