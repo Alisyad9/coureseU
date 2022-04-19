@@ -3,6 +3,7 @@ import classes from '../style/AddUser.module.css';
 import Card from '../style/Card';
 import Button from '../style/Button';
 import ErrorModal from '../style/ErrorModal';
+import Wrapper from '../helper/Wrapper';
 
 const AddUser = (props) => {
   ////////////////user state /////
@@ -45,7 +46,8 @@ const AddUser = (props) => {
     setError(null);
   };
   return (
-    <div>
+    // <div>  will use the wrapper instead to reduce the div usage</>
+    <Wrapper>
       <Card className={classes.input}>
         <form onSubmit={submitHandler}>
           <label htmlFor="username">Username</label>
@@ -77,7 +79,8 @@ const AddUser = (props) => {
           onConfirm={errorHandler}
         />
       )}
-    </div>
+    </Wrapper>
+    /* </div> */
   );
 };
 export default AddUser;
