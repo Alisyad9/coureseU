@@ -46,7 +46,8 @@ const ErrorModal = (props) => {
       </Card> */
 
     // </div>
-    <React.Fragment>
+    // changed the wrapper to empty one
+    <>
       {ReactDOM.createPortal(
         <Backdrop onConfirm={props.onConfirm} />,
         document.getElementById('backdrop-root')
@@ -59,7 +60,7 @@ const ErrorModal = (props) => {
         />,
         document.getElementById('overlay-root')
       )}
-    </React.Fragment>
+    </>
   );
 };
 
