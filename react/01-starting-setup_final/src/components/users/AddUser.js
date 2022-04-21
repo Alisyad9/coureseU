@@ -74,6 +74,7 @@ const AddUser = (props) => {
       </Card>
       {error && (
         <ErrorModal
+          ///rename this variable
           lol={error.title}
           message={error.message}
           onConfirm={errorHandler}
