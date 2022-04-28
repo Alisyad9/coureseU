@@ -26,6 +26,7 @@ const AddUser = (props) => {
       setError({
         title: 'invalid input',
         message: 'enter a name',
+        id: '2',
       });
       return;
     }
