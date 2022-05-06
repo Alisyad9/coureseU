@@ -8,6 +8,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    console.log('Checking form validaty!');
     const storedLogin = localStorage.getItem('isLoggedIn');
     console.log(storedLogin);
 
