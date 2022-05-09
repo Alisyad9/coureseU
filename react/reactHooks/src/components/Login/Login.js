@@ -11,15 +11,15 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
   //////new useEffect
-  useEffect(() => {
-    console.log('effect running');
+  // useEffect(() => {
+  //   console.log('effect running');
 
-    ///clean up function
+  //   ///clean up function
 
-    return () => {
-      console.log('effect clean up');
-    };
-  }, [enteredPassword]);
+  //   return () => {
+  //     console.log('effect clean up');
+  //   };
+  // }, [enteredPassword]);
 
   // useEffect(() => {
   //   const identifier = setTimeout(() => {
@@ -37,14 +37,17 @@ const Login = (props) => {
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
+    setFormIsValid(
+      event.target.value.includes('@') && enteredPassword.trim().length > 6
+    );
   };
 
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
 
-    // setFormIsValid(
-    //   event.target.value.trim().length > 6 && enteredEmail.includes('@')
-    // );
+    setFormIsValid(
+      event.target.value.trim().length && enteredEmail.includes('@') > 6
+    );
   };
 
   const validateEmailHandler = () => {
