@@ -11,29 +11,31 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
   //////new useEffect
-  // useEffect(() => {
-  //   console.log('effect running');
+  useEffect(() => {
+    console.log('effect running');
 
-  //   ///clean up function
+    ///clean up function
 
-  //   return () => {
-  //     console.log('effect clean up');
-  //   };
-  // }, [enteredPassword]);
+    return () => {
+      console.log('effect clean up');
+    };
+  }, [enteredPassword]);
 
-  // useEffect(() => {
-  //   const identifier = setTimeout(() => {
-  //     console.log('checking form validity');
-  //     setFormIsValid(
-  //       enteredEmail.includes('@') && enteredPassword.trim().length > 6
-  //     );
-  //   }, 500);
+  useEffect(() => {
+    const identifier = setTimeout(() => {
+      console.log('checking form validity');
+      setFormIsValid(
+        enteredEmail.includes('@') && enteredPassword.trim().length > 6
+      );
+    }, 500);
 
-  //   return () => {
-  //     console.log('checkout');
-  //     clearTimeout(identifier);
-  //   };
-  // }, [enteredEmail, enteredPassword]);
+    return () => {
+      console.log('checkout');
+      clearTimeout(identifier);
+    };
+  }, [enteredEmail, enteredPassword]);
+
+  /////
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
