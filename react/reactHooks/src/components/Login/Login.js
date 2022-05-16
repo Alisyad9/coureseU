@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
+
+///reduce function can be outside the scope of the login component, because it does not need to interact with anything inside the function
+const emailReducer = () => {};
 
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -10,6 +13,9 @@ const Login = (props) => {
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
+
+  const [emailState, dispatcherEmail] = useReducer(emailReducer);
+
   //////new useEffect
   useEffect(() => {
     console.log('effect running');
@@ -21,19 +27,19 @@ const Login = (props) => {
     };
   }, [enteredPassword]);
 
-  useEffect(() => {
-    const identifier = setTimeout(() => {
-      console.log('checking form validity');
-      setFormIsValid(
-        enteredEmail.includes('@') && enteredPassword.trim().length > 6
-      );
-    }, 500);
+  // useEffect(() => {
+  //   const identifier = setTimeout(() => {
+  //     console.log('checking form validity');
+  //     setFormIsValid(
+  //       enteredEmail.includes('@') && enteredPassword.trim().length > 6
+  //     );
+  //   }, 500);
 
-    return () => {
-      console.log('checkout');
-      clearTimeout(identifier);
-    };
-  }, [enteredEmail, enteredPassword]);
+  //   return () => {
+  //     console.log('checkout');
+  //     clearTimeout(identifier);
+  //   };
+  // }, [enteredEmail, enteredPassword]);
 
   /////
 
