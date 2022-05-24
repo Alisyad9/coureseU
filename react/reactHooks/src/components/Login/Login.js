@@ -38,19 +38,19 @@ const Login = (props) => {
     };
   }, [enteredPassword]);
 
-  // useEffect(() => {
-  //   const identifier = setTimeout(() => {
-  //     console.log('checking form validity');
-  //     setFormIsValid(
-  //       enteredEmail.includes('@') && enteredPassword.trim().length > 6
-  //     );
-  //   }, 500);
+  useEffect(() => {
+    const identifier = setTimeout(() => {
+      console.log('checking form validity');
+      setFormIsValid(
+        enteredEmail.includes('@') && enteredPassword.trim().length > 6
+      );
+    }, 500);
 
-  //   return () => {
-  //     console.log('checkout');
-  //     clearTimeout(identifier);
-  //   };
-  // }, [enteredEmail, enteredPassword]);
+    return () => {
+      console.log('checkout');
+      clearTimeout(identifier);
+    };
+  }, [enteredEmail, enteredPassword]);
 
   /////
 
