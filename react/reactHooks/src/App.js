@@ -7,6 +7,7 @@ import MainHeader from './components/MainHeader/MainHeader';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  ///runs at the first initial render of the page
   useEffect(() => {
     console.log('Checking form validaty!');
     const storedLogin = localStorage.getItem('isLoggedIn');
@@ -33,7 +34,6 @@ function App() {
       <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
       <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
-        {isLoggedIn && <Home onLogout={logoutHandler} />}
         {isLoggedIn && <Home onLogout={logoutHandler} />}
       </main>
     </>
