@@ -3,7 +3,7 @@ import React, { useState, useEffect, useReducer } from 'react';
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
-
+/// useReducer is best used with many updating and validity of states
 ///reduce function can be outside the scope of the login component, because it does not need to interact with anything inside the function
 const emailReducer = (state, action) => {
   if (action.type === 'USER_INPUT') {
