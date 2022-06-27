@@ -7,20 +7,20 @@ import Button from '../UI/Button/Button';
 ///reduce function can be outside the scope of the login component, because it does not need to interact with anything inside the function
 const emailReducer = (state, action) => {
   if (action.type === 'USER_INPUT') {
-    return { value: action.val, isValid: action.val.trim() > 6 };
+    return { value: action.val, isValid: action.val.includes('@') };
   }
   if (action.type === 'INPUT_BLUR') {
-    return { value: state.value, isValid: state.val.trim() > 6 };
+    return { value: state.value, isValid: state.val.includes('@') };
   }
   return { value: '', isValid: false };
 };
 ////passwordReducer function
 const passwordReducer = (state, action) => {
   if (action.type === 'USER_INPUT') {
-    return { value: action.val, isValid: action.val.includes('@') };
+    return { value: action.val, isValid: action.val.trim() > 6 };
   }
   if (action.type === 'INPUT_BLUR') {
-    return { value: state.value, isValid: state.value.includes('@') };
+    return { value: state.value, isValid: state.val.trim() > 6 };
   }
   return { value: '', isValid: false };
 };
@@ -84,7 +84,7 @@ const Login = (props) => {
 
     setFormIsValid(
       // event.target.value.trim().length && enteredEmail.includes('@') > 6
-      emailState.isValid && event.target.value.trim().length > 6
+      emailState.isValid && event.target.value.trim().length > 1
     );
   };
 
