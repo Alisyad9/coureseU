@@ -36,7 +36,7 @@ const Login = (props) => {
     return () => {
       console.log('effect clean up');
     };
-  }, [enteredPassword]);
+  }, []);
 
   // useEffect(() => {
   //   const identifier = setTimeout(() => {
