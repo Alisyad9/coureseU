@@ -7,6 +7,16 @@ import Button from '../UI/Button/Button';
 ///reduce function can be outside the scope of the login component, because it does not need to interact with anything inside the function
 const emailReducer = (state, action) => {
   if (action.type === 'USER_INPUT') {
+    return { value: action.val, isValid: action.val.trim() > 6 };
+  }
+  if (action.type === 'INPUT_BLUR') {
+    return { value: state.value, isValid: state.val.trim() > 6 };
+  }
+  return { value: '', isValid: false };
+};
+////passwordReducer function
+const passwordReducer = (state, action) => {
+  if (action.type === 'USER_INPUT') {
     return { value: action.val, isValid: action.val.includes('@') };
   }
   if (action.type === 'INPUT_BLUR') {
@@ -24,7 +34,11 @@ const Login = (props) => {
 
   const [emailState, dispatcherEmail] = useReducer(emailReducer, {
     value: '',
-    isValid: false,
+    isValid: null,
+  });
+  const [passwordState, dispatchPassword] = useReducer(passwordReducer, {
+    value: '',
+    isValid: null,
   });
 
   //////new useEffect
@@ -59,12 +73,14 @@ const Login = (props) => {
     // setEnteredEmail(event.target.value);
     setFormIsValid(
       // event.target.value.includes('@') && enteredPassword.trim().length > 6
-      emailState.value.includes('@') && event.target.value.trim().length > 6
+      // emailState.value.includes('@') && event.target.value.trim().length > 6
+      event.target.value.includes('@') && passwordState.isValid
     );
   };
 
   const passwordChangeHandler = (event) => {
-    setEnteredPassword(event.target.value);
+    // setEnteredPassword(event.target.value);
+    dispatchPassword({ type: 'USER_INPUT', val: event.target.value });
 
     setFormIsValid(
       // event.target.value.trim().length && enteredEmail.includes('@') > 6
@@ -79,13 +95,14 @@ const Login = (props) => {
   };
 
   const validatePasswordHandler = () => {
-    setPasswordIsValid(enteredPassword.trim().length > 6);
+    // setPasswordIsValid(enteredPassword.trim().length > 6);
+    dispatchPassword({ type: 'INPUT_BLUR' });
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     // props.onLogin(enteredEmail, enteredPassword);
-    props.onLogin(emailState.value, enteredPassword);
+    props.onLogin(emailState.value, passwordState.value);
   };
 
   return (
@@ -109,14 +126,16 @@ const Login = (props) => {
         </div>
         <div
           className={`${classes.control} ${
-            passwordIsValid === false ? classes.invalid : ''
+            // passwordIsValid === false ? classes.invalid : ''
+            passwordState.isValid === false ? classes.invalid : ''
           }`}
         >
           <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"
-            value={enteredPassword}
+            // value={enteredPassword}
+
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
           />
