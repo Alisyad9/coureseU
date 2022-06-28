@@ -15,15 +15,15 @@ const emailReducer = (state, action) => {
   return { value: '', isValid: false };
 };
 ////passwordReducer function
-// const passwordReducer = (state, action) => {
-//   if (action.type === 'USER_INPUT') {
-//     return { value: action.val, isValid: action.val.trim().length > 6 };
-//   }
-//   if (action.type === 'INPUT_BLUR') {
-//     return { value: state.val, isValid: state.val.trim().length > 6 };
-//   }
-//   return { value: '', isValid: false };
-// };
+const passwordReducer = (state, action) => {
+  if (action.type === 'USER_INPUT') {
+    return { value: action.val, isValid: action.val.trim().length > 6 };
+  }
+  if (action.type === 'INPUT_BLUR') {
+    return { value: state.val, isValid: state.val.trim().length > 6 };
+  }
+  return { value: '', isValid: false };
+};
 
 const Login = (props) => {
   // const [enteredEmail, setEnteredEmail] = useState('');
