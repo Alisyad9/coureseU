@@ -67,7 +67,7 @@ const AddUser = (props) => {
           </Button>{' '}
           <span
             className={classes.tooltip}
-            data-tooltip="Make sure all the fields are filled"
+            data-tooltip="all the fields must be filled"
           >
             ?
           </span>
